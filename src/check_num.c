@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo.c                                            :+:      :+:    :+:   */
+/*   check_num.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:15:26 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/01/27 15:30:35 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/01/27 17:00:05 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ int	ft_atoi(char *str)
 	while (*str >= '0' && *str <= '9')
 	{
 		nb = nb * 10 + *str++ - 48;
-		nb = nb * sign;
 	}
 	return (nb * sign);
 }
@@ -61,10 +60,9 @@ long	ft_atoi_long(char *str)
 	}
 	while (*str >= '0' && *str <= '9')
 	{
-		nb = nb * 10 + *str - 48;
-		nb = nb * sign;
+		nb = nb * 10 + *str++ - 48;
 	}
-	return (nb);
+	return ((int)nb * sign);
 }
 
 int	is_num_l(char	*str)
@@ -79,12 +77,12 @@ int	is_num_l(char	*str)
 			return (0);
 	}
 	nbr = ft_atoi_long(str);
-	if (nbr < MAX_INT && nbr < MIN_INT)
+	if (nbr > MAX_INT && nbr < MIN_INT)
 	{
-		printf(RED"ERROR\n");
+		printf(RED"ERRtOR\n");
 		return (0);
 	}
-		return (1);
+	return (1);
 }
 
 // int	parsing(int	argc, char **argv)
@@ -99,8 +97,8 @@ int	is_num_l(char	*str)
 int	main()
 {
 	int	nb;
-	char *str = "-2342hbg";
+	char *str = "216474836498";
 
-	nb = ft_atoi(str);
+	nb = is_num_l(str);
 	printf("atoi: %d", nb);
 }

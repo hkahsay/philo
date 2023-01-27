@@ -6,12 +6,12 @@
 #    By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/15 20:19:13 by hkahsay           #+#    #+#              #
-#    Updated: 2023/01/27 13:15:06 by hkahsay          ###   ########.fr        #
+#    Updated: 2023/01/27 16:53:40 by hkahsay          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
-SRCS = 	src/philo.c \
+SRCS = 	src/check_num.c \
 		src/pthread.c \
 		
 
@@ -21,7 +21,7 @@ CC				= gcc
 
 RM				= rm -f
 
-CFLAGS			= -g -Wall -Werror -Wextra
+CFLAGS			= -g -Wall -Werror -Wextra 
 
 
 

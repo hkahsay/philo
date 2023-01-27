@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:21:43 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/01/27 15:29:13 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/01/27 16:52:16 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # include<string.h>
 # include<pthread.h>
 
-# define MAX_INT = 2147483647
-# define MIN_INT = -2147483648
+# define MAX_INT 2147483647
+# define MIN_INT -2147483647
 # define GREEN	"\033[1m\033[32m"
 # define RED	"\033[1m\033[31m"
 # define YELLOW  "\033[33m"
@@ -44,5 +44,5 @@ typedef struct s_philo
 int		is_blank(char c);
 int		ft_atoi(char *str);
 long	ft_atoi_long(char *str);
-int		is_num_l(int nbr);
+int		is_num_l(char *str);
 #endif
