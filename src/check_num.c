@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:15:26 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/01/27 17:00:05 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/01/30 15:53:34 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,20 +85,11 @@ int	is_num_l(char	*str)
 	return (1);
 }
 
-// int	parsing(int	argc, char **argv)
-// {
-// 	if(argc < 5)
-// 	{
-// 		printf("Check your argument \n");
-// 		exit(0);
-// 	}
-// }
-
-int	main()
+int	main(void)
 {
 	int	nb;
 	char *str = "216474836498";
 
-	nb = is_num_l(str);
+	nb = ft_atoi_long(str);
 	printf("atoi: %d", nb);
 }

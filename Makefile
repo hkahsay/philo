@@ -6,13 +6,15 @@
 #    By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/15 20:19:13 by hkahsay           #+#    #+#              #
-#    Updated: 2023/01/27 16:53:40 by hkahsay          ###   ########.fr        #
+#    Updated: 2023/01/30 15:26:02 by hkahsay          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
 SRCS = 	src/check_num.c \
-		src/pthread.c \
+		src/init.c \
+		src/parsing.c \
+
 		
 
 OBJS			= ${SRCS:.c=.o}	

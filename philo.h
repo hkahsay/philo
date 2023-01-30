@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:21:43 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/01/27 16:52:16 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/01/30 15:27:10 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,7 @@ int		is_blank(char c);
 int		ft_atoi(char *str);
 long	ft_atoi_long(char *str);
 int		is_num_l(char *str);
+int		parsing(int argc, char **argv, t_philo *philo);
+
+
 #endif
