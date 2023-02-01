@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   stimulations.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/26 17:30:56 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/01/30 16:00:07 by hkahsay          ###   ########.fr       */
+/*   Created: 2023/01/31 09:08:16 by hkahsay           #+#    #+#             */
+/*   Updated: 2023/01/31 14:15:30 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../philo.h"
 
-void	create_thread(t_philo *philo)
+void	taking_fork()
 {
-	pthread_t	threads;
-	int			nbr_of_philos;
+	pthread_mutex_t	fork;
+	int	i;
 	
-	nbr_of_philos = philo->number_of_philosophers;
-	threads = malloc(sizeof(pthread_t) * nbr_of_philos);
-	
-}
-
-void	create_mutex()
-{
+	i = 0
+	while (i < 2)
+	{
+		/* code */
+	}
 	
 }

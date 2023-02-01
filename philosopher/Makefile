@@ -6,7 +6,7 @@
 #    By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/15 20:19:13 by hkahsay           #+#    #+#              #
-#    Updated: 2023/01/30 15:26:02 by hkahsay          ###   ########.fr        #
+#    Updated: 2023/01/31 12:09:57 by hkahsay          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ CC				= gcc
 
 RM				= rm -f
 
-CFLAGS			= -g -Wall -Werror -Wextra 
+CFLAGS			= -g -Wall -Werror -Wextra -pthread
 
 
 

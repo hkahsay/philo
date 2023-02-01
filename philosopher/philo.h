@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:21:43 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/01/30 15:27:10 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/01/31 15:55:18 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include<stdlib.h>
 # include<string.h>
 # include<pthread.h>
+# include<sys/time.h>
+# include"philo.h"
 
 # define MAX_INT 2147483647
 # define MIN_INT -2147483647
@@ -26,20 +28,28 @@
 # define YELLOW  "\033[33m"
 # define BLUE    "\033[34m"
 
-typedef	struct	s_forks
+typedef	struct	s_philo
 {
 	pthread_mutex_t	mutex_fork;
+	
 	int				pos_fork;
- }	t_forks;
-typedef struct s_philo
+ }	t_philo;
+ 
+typedef struct s_simulation
 {
-	int	number_of_philosophers;
-	int	time_to_die;
-	int	time_to_eat;
-	int	time_to_sleep;
-	int	time_to_think;
-	int	number_of_meals;
-}	t_philo;
+	int		number_of_philosophers;
+	int		time_to_die;
+	int		time_to_eat;
+	int		time_to_sleep;
+	int		time_to_think;
+	int		number_of_meals;
+	int		l_fork;
+	int		r_fork;
+	time_t	time_to_start;
+	pthread_mutex_t	mutex_fork;
+	int				pos;
+	int				free;
+}	t_simulation;
 
 int		is_blank(char c);
 int		ft_atoi(char *str);
