@@ -3,10 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+         #
+#    By: mac <mac@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/15 20:19:13 by hkahsay           #+#    #+#              #
+<<<<<<< HEAD:philosopher/Makefile
 #    Updated: 2023/01/31 12:09:57 by hkahsay          ###   ########.fr        #
+=======
+#    Updated: 2023/01/31 18:47:09 by mac              ###   ########.fr        #
+>>>>>>> 1dd5581d7c68b59bbd73292705e16065a6e76dc1:Makefile
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +18,7 @@ NAME = philo
 SRCS = 	src/check_num.c \
 		src/init.c \
 		src/parsing.c \
+		src/main.c \
 
 		
 

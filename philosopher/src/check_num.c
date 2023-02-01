@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_num.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:15:26 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/01/30 15:53:34 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/01/31 18:43:38 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,13 +83,4 @@ int	is_num_l(char	*str)
 		return (0);
 	}
 	return (1);
-}
-
-int	main(void)
-{
-	int	nb;
-	char *str = "216474836498";
-
-	nb = ft_atoi_long(str);
-	printf("atoi: %d", nb);
 }
