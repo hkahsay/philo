@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:21:43 by hkahsay           #+#    #+#             */
-<<<<<<< HEAD:philosopher/philo.h
-/*   Updated: 2023/01/31 15:55:18 by hkahsay          ###   ########.fr       */
-=======
-/*   Updated: 2023/01/31 18:47:17 by mac              ###   ########.fr       */
->>>>>>> 1dd5581d7c68b59bbd73292705e16065a6e76dc1:philo.h
+/*   Updated: 2023/02/01 12:30:02 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +33,10 @@ typedef	struct	s_philo
 	pthread_mutex_t	mutex_fork;
 	
 	int				pos_fork;
-<<<<<<< HEAD:philosopher/philo.h
- }	t_philo;
- 
-typedef struct s_simulation
-=======
  }	t_forks;
  
 
 typedef struct s_philo
->>>>>>> 1dd5581d7c68b59bbd73292705e16065a6e76dc1:philo.h
 {
 	int		number_of_philosophers;
 	int		time_to_die;
@@ -60,7 +50,7 @@ typedef struct s_philo
 	pthread_mutex_t	mutex_fork;
 	int				pos;
 	int				free;
-}	t_simulation;
+}	t_philo;
 
 typedef struct s_info
 {
