@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 13:52:01 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/01/31 15:43:16 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/02/01 12:59:48 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	valid_arguments(int argc, char **argv)
 	int	i;
 
 	i = 1;
-	if (argc < 6)
+	if (argc == 5 || argc == 6)
 	{
 		while (i < argc)
 		{
@@ -49,7 +49,3 @@ int	parsing(int argc, char **argv, t_philo *philo)
 	return (1);
 }
 
-int	main(int argc, char **argv)
-{
-	t_philo	
-}
