@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+         #
+#    By: mac <mac@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/15 20:19:13 by hkahsay           #+#    #+#              #
-#    Updated: 2023/02/01 12:59:27 by hkahsay          ###   ########.fr        #
+#    Updated: 2023/02/04 17:36:17 by mac              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,9 @@ SRCS = 	src/check_num.c \
 		src/init.c \
 		src/parsing.c \
 		src/main.c \
+		src/get_time.c \
+		src/simulation.c \
+
 
 		
 
