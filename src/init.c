@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:30:56 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/01 12:28:12 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/02/01 17:53:12 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,29 @@
 
 
 void *routine(void *arg) {
-	t_info * info = arg;
-	printf("i am %d out of %d\n", info->j, info->config->number_of_philosophers);
+	t_info * info;
+	
+	info = arg;
+	printf("i am %d out of %d\n", info->j, info->number_of_philosophers);
 	return arg;
 }
 
-void	create_threads(t_philo *philo)
+void	create_threads(t_info *info)
 {
 	int			nbr_of_philos;
 	pthread_t	*threads;
-	t_info	   *infos;	
+	// t_philo *philo;
 	
-	nbr_of_philos = philo->number_of_philosophers;
+	nbr_of_philos = info->number_of_philosophers;
 	threads = malloc(sizeof(pthread_t) * nbr_of_philos);
-	infos = malloc(sizeof(t_info) * nbr_of_philos);
+	info = malloc(sizeof(t_info) * nbr_of_philos);
 	
 	int			i = 0;
 	while (i < nbr_of_philos)
 	{
-		infos[i].j = i;
-		infos[i].config = philo;
-		pthread_create(&threads[i], NULL, routine, &infos[i]);
+		info[i].j = i;
+		info[i].number_of_philosophers = nbr_of_philos;
+		pthread_create(&threads[i], NULL, routine, &info[i]);
 		i++;
 	}
 	i = 0;
@@ -44,12 +46,12 @@ void	create_threads(t_philo *philo)
 		pthread_join(threads[i], NULL);
 		i++;
 	}
-	
-
-	
 }
 
-void	create_mutex()
+void	init_mutex(t_info *info)
 {
+	int	nbr_of_forks;
+	int	i;
 	
+	nbr_of_forks = forks->mutex_fork 
 }

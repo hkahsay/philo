@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 13:52:01 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/01 12:59:48 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/02/01 17:40:12 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,16 @@ static int	valid_arguments(int argc, char **argv)
 	return (0);
 }
 
-int	parsing(int argc, char **argv, t_philo *philo)
+int	parsing(int argc, char **argv, t_info *info)
 {
 	if (valid_arguments(argc, argv))
 	{
-		philo->number_of_philosophers = ft_atoi(argv[1]);
-		philo->time_to_die = ft_atoi(argv[2]);
-		philo->time_to_eat = ft_atoi(argv[3]);
-		philo->time_to_sleep = ft_atoi(argv[4]);
+		info->number_of_philosophers = ft_atoi(argv[1]);
+		info->time_to_die = ft_atoi(argv[2]);
+		info->time_to_eat = ft_atoi(argv[3]);
+		info->time_to_sleep = ft_atoi(argv[4]);
 		if (argc == 6)
-			philo->number_of_meals = ft_atoi(argv[5]);
+			info->nb_of_meals = ft_atoi(argv[5]);
 	}
 	else
 	{
