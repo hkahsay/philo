@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 13:52:01 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/06 13:32:59 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/02/08 12:48:17 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,3 @@ int	parsing(int argc, char **argv, t_info *info)
 	}
 	return (1);
 }
-
