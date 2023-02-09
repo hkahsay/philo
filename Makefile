@@ -6,7 +6,7 @@
 #    By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/15 20:19:13 by hkahsay           #+#    #+#              #
-#    Updated: 2023/02/08 12:30:17 by hkahsay          ###   ########.fr        #
+#    Updated: 2023/02/09 11:31:35 by hkahsay          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ SRCS = 	src/check_num.c \
 		src/init.c \
 		src/parsing.c \
 		src/main.c \
-		src/get_time.c\
+		src/get_time.c \
+		src/simulation.c \
 
 OBJS			= ${SRCS:.c=.o}	
 

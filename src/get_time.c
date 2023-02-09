@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 09:08:57 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/08 17:10:23 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/02/09 12:17:41 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,10 @@ void	ft_usleep(int m_sec)
 	while (get_time_in_ms() - m_sleep < m_sec)
 		usleep(m_sec / 10);
 }
-void	dispaly_status(long int t_ms, t_philo *philo, char *str)
+void	display_status(long int t_ms, t_philo *philo, char *str)
 {
 	pthread_mutex_lock(&(philo->info->status));
 	t_ms = get_time_in_ms() - philo->info->time_to_start;
-	if ( )
+	if (philo->info->stop && t_ms >=0)
+		printf("%ld, %d, %s\n", t_ms, philo->philo_id, str);
 }
