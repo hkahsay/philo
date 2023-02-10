@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 13:52:01 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/08 12:48:17 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/02/10 19:31:08 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ static int	valid_arguments(int argc, char **argv)
 
 int	parsing(int argc, char **argv, t_info *info)
 {
+	pthread_mutex_init(&info->mutex_eat, NULL);
+	pthread_mutex_init(&info->mutex_stop, NULL);
+	pthread_mutex_init(&info->status, NULL);
 	if (valid_arguments(argc, argv))
 	{
 		info->nbr_of_philosophers = ft_atoi(argv[1]);
@@ -42,9 +45,6 @@ int	parsing(int argc, char **argv, t_info *info)
 			info->nb_of_meals = ft_atoi(argv[5]);
 	}
 	else
-	{
-		printf("Incorrect number of arguments\n");
-		return (0);
-	}
+		info->nb_of_meals = -1;
 	return (1);
 }

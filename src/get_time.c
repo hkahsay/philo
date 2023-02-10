@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 09:08:57 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/09 12:17:41 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/02/10 19:03:18 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 // sec = (size_t)tp.tv_sec * 1000;
 // usec = (size_t)tp.tv_usec / 1000;
 
-long long	get_time_in_ms(void)
+long int	actual_time_msec(void)
 {
 	struct timeval		tp;
 	long int			actual_t_ms;
@@ -37,19 +37,27 @@ long long	get_time_in_ms(void)
 //        int usleep(useconds_t usec)
 //    The usleep() function suspends execution of the calling thread
 //        for (at least) usec microseconds
-// get_time_in_ms = timestamp;
-void	ft_usleep(int m_sec)
+// actual_time_msec = timestamp;
+void	ms_sleep(int m_sec)
 {
-	long int	m_sleep;
+	long int	start_time_ms;
 
-	m_sleep = get_time_in_ms();
-	while (get_time_in_ms() - m_sleep < m_sec)
+	start_time_ms = actual_time_msec();
+	while (actual_time_msec() - start_time_ms < m_sec)
 		usleep(m_sec / 10);
 }
+
+long int	elapsed_time(t_info	*info)
+{
+	info->end = actual_time_msec();
+	return (info->end - info->time_to_start);
+}
+
 void	display_status(long int t_ms, t_philo *philo, char *str)
 {
 	pthread_mutex_lock(&(philo->info->status));
-	t_ms = get_time_in_ms() - philo->info->time_to_start;
-	if (philo->info->stop && t_ms >=0)
-		printf("%ld, %d, %s\n", t_ms, philo->philo_id, str);
+	t_ms = actual_time_msec() - philo->info->time_to_start;
+	if (philo->info->stop && t_ms >= 0)
+		printf("time: %ld, philo: %d, %s\n", t_ms, philo->philo_id, str);
+	pthread_mutex_unlock(&(philo->info->status));
 }

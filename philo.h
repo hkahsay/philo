@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:21:43 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/09 12:17:59 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/02/10 19:00:14 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,10 @@
 
 typedef struct s_philo
 {
-	pthread_mutex_t	*l_fork;
-	pthread_mutex_t	*r_fork;
+	pthread_mutex_t	l_fork;
+	pthread_mutex_t	r_fork;
 	int				last_meal;
 	pthread_t		tid;
-	int				next;		
 	int				pos;
 	int				philo_id;
 	int				free;
@@ -55,6 +54,8 @@ typedef struct s_info
 	int				stop;
 	int				meals;
 	t_philo			*philo;
+	t_philo			*first_philo;
+	long int		end;
 	long int		time_to_start;
 	pthread_mutex_t	mutex_stop;
 	pthread_mutex_t	mutex_eat;
@@ -62,21 +63,25 @@ typedef struct s_info
 
 }					t_info;
 
+//--------utils----------
 int				is_blank(char c);
 int				ft_atoi(char *str);
 long			ft_atoi_long(char *str);
 int				is_num_l(char *str);
 int				parsing(int argc, char **argv, t_info *info);
-int				create_threads(t_info *info);
-long long		get_time_in_ms(void);
-struct s_info	*set_philos(t_info	*info);
-void			ft_usleep(int m_sec);
-int				is_dead(t_info	*info);
-void			take_fork(t_philo *philo);
-void			eat_philo(t_philo	*philo);
+//--------setting time---------
+long int		actual_time_msec(void);
+void			ms_sleep(int m_sec);
+long int		elapsed_time(t_info *info);
+//------------print or display status--------
 void			display_status(long int t_ms, t_philo *philo, char *str);
-
-
-
+//---------init data and philos---------
+int				create_threads(t_info *info);
+struct s_info	*set_philos(t_info	*info);
+//---------philo routine----------
+int				is_dead(t_info	*info);
+int				take_fork(t_philo *philo);
+int				all_philo_eat(t_philo *philo);
+void			eat_philo(t_philo	*philo);
 
 #endif
