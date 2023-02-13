@@ -6,13 +6,13 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 12:38:43 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/10 19:19:11 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/02/13 11:07:59 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../philo.h"
 
-int main (int argc, char **argv)
+int main(int argc, char *argv[])
 {
     t_info  *info;
 

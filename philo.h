@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:21:43 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/10 19:00:14 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/02/13 15:06:30 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct s_philo
 	pthread_mutex_t	r_fork;
 	int				last_meal;
 	pthread_t		tid;
-	int				pos;
+	// int				pos;
 	int				philo_id;
 	int				free;
 	int				n_meals;
@@ -54,7 +54,7 @@ typedef struct s_info
 	int				stop;
 	int				meals;
 	t_philo			*philo;
-	t_philo			*first_philo;
+	// t_philo			*first_philo;
 	long int		end;
 	long int		time_to_start;
 	pthread_mutex_t	mutex_stop;
