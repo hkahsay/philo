@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 09:08:57 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/13 12:46:11 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/02/15 11:03:15 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ms_sleep(int m_sec)
 
 	start_time_ms = actual_time_msec();
 	while (actual_time_msec() - start_time_ms < m_sec)
-		usleep(m_sec / 10);
+		usleep(m_sec);
 }
 
 long int	elapsed_time(t_info	*info)
@@ -61,3 +61,22 @@ void	display_status(long int t_ms, t_philo *philo, char *str)
 		printf("time: %ld, philo: %d, %s\n", t_ms, philo->philo_id, str);
 	pthread_mutex_unlock(&(philo->info->status));
 }
+
+// void	ms_sleep(long int milliseconde)
+// {
+// 	long int	start_time;
+// 	long int	timer_ms;
+
+// 	start_time = get_actual_time();
+// 	timer_ms = get_time_pass(start_time, get_actual_time());
+// 	while (timer_ms < milliseconde)
+// 	{
+// 		timer_ms = get_time_pass(start_time, get_actual_time());
+// 		usleep(milliseconde / 10);
+// 	}
+// }
+
+// long int	get_time_pass(long int start, long int end)
+// {
+// 	return (end - start);
+// }

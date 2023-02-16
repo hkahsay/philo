@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:21:43 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/13 15:06:30 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/02/15 14:32:37 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,8 @@ typedef struct s_philo
 	pthread_mutex_t	r_fork;
 	int				last_meal;
 	pthread_t		tid;
-	// int				pos;
 	int				philo_id;
-	int				free;
-	int				n_meals;
+	int				meal_counter;
 	int				dead;
 	struct s_info	*info;
 }					t_philo;
@@ -45,13 +43,13 @@ typedef struct s_philo
 typedef struct s_info
 {
 	int				nbr_of_philosophers;
-	int				nb_of_meals;
 	int				philo_eat;
 	int				time_to_die;
 	int				time_to_eat;
 	int				time_to_sleep;
 	int				time_to_think;
 	int				stop;
+	int				nb_of_meals;
 	int				meals;
 	t_philo			*philo;
 	// t_philo			*first_philo;
@@ -62,6 +60,7 @@ typedef struct s_info
 	pthread_mutex_t	status;
 
 }					t_info;
+
 
 //--------utils----------
 int				is_blank(char c);
@@ -79,9 +78,13 @@ void			display_status(long int t_ms, t_philo *philo, char *str);
 int				create_threads(t_info *info);
 struct s_info	*set_philos(t_info	*info);
 //---------philo routine----------
-int				is_dead(t_info	*info);
 int				take_fork(t_philo *philo);
 int				all_philo_eat(t_philo *philo);
 void			eat_philo(t_philo	*philo);
+//---------check if philo is dead-----
+int				dead_philos_thread(t_philo *philo);
+void			*check_dead(void	*args);
+void			one_philo(t_philo *philo);
+int				check_philo_eat_enough(t_philo *philo);
 
 #endif

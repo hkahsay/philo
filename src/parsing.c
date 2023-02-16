@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 13:52:01 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/13 14:27:05 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/02/15 11:14:28 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ static int	valid_arguments(int argc, char **argv)
 	return (0);
 }
 
+//if i dont specify nb_meals i just assign
+//nb_meal to 1 so aslong as nb_meal is 1 philos are going to eat their meal
 int	parsing(int argc, char **argv, t_info *info)
 {
 	pthread_mutex_init(&info->mutex_eat, NULL);
@@ -43,7 +45,7 @@ int	parsing(int argc, char **argv, t_info *info)
 		info->time_to_sleep = ft_atoi(argv[4]);
 		if (argc == 6)
 			info->nb_of_meals = ft_atoi(argv[5]);
-		info->nb_of_meals = -1;
+		info->nb_of_meals = 1;
 	}
 	else
 	{
