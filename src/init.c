@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:30:56 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/20 16:44:31 by mac              ###   ########.fr       */
+/*   Updated: 2023/02/20 18:52:36 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,10 @@
 void	*routine(void *arg)
 {
 	t_philo		*philo;
-	// int			n_philo;
 	long int	time;
 
 	philo = (t_philo *)arg;
 	time = elapsed_time(philo->info);
-	// n_philo = philo->info->nbr_of_philosophers;
 	if (philo->philo_id % 2 == 0)
 		ms_sleep(philo->info->time_to_eat);
 	while (philo->dead == 0)
@@ -72,7 +70,6 @@ int	create_threads(t_info *info)
 	if (info->nbr_of_philosophers == 1)
 		one_philo(info->philo);
 	i = 0;
-	// dead_philos_thread(info->philo);
 	while (i < info->nbr_of_philosophers)
 	{
 		if (pthread_create(&info->philo[i].tid, NULL,
@@ -80,6 +77,7 @@ int	create_threads(t_info *info)
 			return (-1);
 		i++;
 	}
+	pthread_create(&info->tid_dead, NULL, &check_dead, (void *) info->philo);
 	i = 0;
 	while (i < info->nbr_of_philosophers)
 	{
@@ -87,23 +85,6 @@ int	create_threads(t_info *info)
 			return (-1);
 		i++;
 	}
+	pthread_join(info->tid_dead, NULL);
 	return (0);
 }
-
-// create thread for philo dead
-
-// int	dead_philos_thread(t_philo *philo)
-// {
-// 	pthread_t	tid_dead;
-
-// 	if (philo->info->nbr_of_philosophers == 1)
-// 		one_philo(philo);
-// 	// philo = malloc(sizeof(t_philo));
-// 	if (pthread_create(&tid_dead, NULL, &check_dead, (void *) philo) != 0)
-// 	{
-// 		return (-1);
-// 	}
-// 	if (pthread_join(tid_dead, NULL) != 0)
-// 		return (-1);
-// 	return (0);
-// }

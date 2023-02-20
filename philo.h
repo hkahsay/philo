@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:21:43 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/20 16:17:46 by mac              ###   ########.fr       */
+/*   Updated: 2023/02/20 18:46:44 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ typedef struct s_info
 	int				time_to_sleep;
 	int				time_to_think;
 	int				stop;
+	pthread_t		tid_dead;
 	int				nb_of_meals;
 	int				meals;
 	t_philo			*philo;
@@ -79,12 +80,11 @@ int				create_threads(t_info *info);
 struct s_info	*set_philos(t_info	*info);
 //---------philo routine----------
 int				take_fork(t_philo *philo);
-int				all_philo_eat(t_philo *philo);
+// int				all_philo_eat(t_philo *philo);
 void			eat_philo(t_philo	*philo);
 //---------check if philo is dead-----
-int				dead_philos_thread(t_philo *philo);
 void			*check_dead(void	*args);
 void			one_philo(t_philo *philo);
-void				check_philo_eat_enough(t_info *info);
+void			check_philo_eat_enough(t_info *info);
 
 #endif

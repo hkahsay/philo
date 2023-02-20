@@ -6,7 +6,7 @@
 /*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 09:08:16 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/20 16:44:41 by mac              ###   ########.fr       */
+/*   Updated: 2023/02/20 18:36:45 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,46 +56,40 @@ void	one_philo(t_philo *philo)
 	exit(0);
 }
 
-// void	*check_dead(void *args)
-// {
-// 	t_philo		*philo;
+void	*check_dead(void *args)
+{
+	t_philo		*philo;
 
-// 	philo = args;
-// 	while (philo->dead != 1)
-// 		check_philo_eat_enough(philo->info);
-// 	return (NULL);
-// }
+	philo = args;
+	while (philo->dead != 1)
+		check_philo_eat_enough(philo->info);
+	return (NULL);
+}
 
-// void	check_philo_eat_enough(t_info *info)
-// {
-// 	int			i;
-// 	int			meal;
+void	check_philo_eat_enough(t_info *info)
+{
+	int			i;
+	long int	time;
+	int			meal;
 	
-// 	i = 0;
-// 	meal = 0;
-// 	// curr_time = actual_time_msec();
-// 	while (i < info->nbr_of_philosophers)
-// 	{
-// 		if (info->nb_of_meals != -1
-// 			&& info->philo[i].meal_counter >= info->nb_of_meals)
-// 		{
-// 			meal++;
-// 			if (meal == info->nbr_of_philosophers)
-// 			{
-// 				printf("last meal%d\n", info->philo->last_meal);
-// 				info->philo->dead = 1;
-// 			}
-// 		}
-// 		if (elapsed_time(info) - info->philo[i].last_meal
-// 			>= info->time_to_die)
-// 		{
-// 			info->philo->dead = 1;
-// 			if (info->philo->dead == 1)
-// 			{
-// 				display_status(elapsed_time(info), info->philo, "philo is dead\n");
-// 				break;
-// 			}
-// 		}
-// 		i++;
-// 	}
-// }
+	i = -1;
+	meal = 0;
+	time = elapsed_time(info);
+	while (++i < info->nbr_of_philosophers)
+	{
+		if (info->philo->meal_counter >= info->nb_of_meals
+			&& info->nb_of_meals != -1)
+		{
+			meal++;
+			if (meal == info->nbr_of_philosophers)
+				info->philo->dead = 1;
+		}
+		if (time - info->philo[i].last_meal
+			>= info->time_to_die)
+		{
+			info->philo->dead = 1;
+			display_status(time, info->philo, YELLOW"philo is dead\n");
+			exit (0);
+		}
+	}
+}
