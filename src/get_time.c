@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_time.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 09:08:57 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/15 11:03:15 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/02/16 18:33:42 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,27 +56,9 @@ long int	elapsed_time(t_info	*info)
 void	display_status(long int t_ms, t_philo *philo, char *str)
 {
 	pthread_mutex_lock(&(philo->info->status));
-	t_ms = actual_time_msec() - philo->info->time_to_start;
-	if (philo->info->stop && t_ms >= 0)
+	//t_ms = actual_time_msec() - philo->info->time_to_start;
+	if (/*philo->info->stop &&*/ t_ms >= 0)
 		printf("time: %ld, philo: %d, %s\n", t_ms, philo->philo_id, str);
 	pthread_mutex_unlock(&(philo->info->status));
 }
 
-// void	ms_sleep(long int milliseconde)
-// {
-// 	long int	start_time;
-// 	long int	timer_ms;
-
-// 	start_time = get_actual_time();
-// 	timer_ms = get_time_pass(start_time, get_actual_time());
-// 	while (timer_ms < milliseconde)
-// 	{
-// 		timer_ms = get_time_pass(start_time, get_actual_time());
-// 		usleep(milliseconde / 10);
-// 	}
-// }
-
-// long int	get_time_pass(long int start, long int end)
-// {
-// 	return (end - start);
-// }

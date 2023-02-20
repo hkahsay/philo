@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simulation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 09:08:16 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/15 14:43:24 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/02/20 16:44:41 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	eat_philo(t_philo	*philo)
 	display_status(time, philo, RED"philo is eating\n");
 	pthread_mutex_lock(&(philo->info->mutex_eat));
 	philo->last_meal = elapsed_time(philo->info);
-	if (philo->info->nb_of_meals == 1)
+	if (philo->info->nb_of_meals == -1)
 		philo->meal_counter++;
 	pthread_mutex_unlock(&philo->info->mutex_eat);
 	ms_sleep(philo->info->time_to_eat);
@@ -56,45 +56,46 @@ void	one_philo(t_philo *philo)
 	exit(0);
 }
 
-int	check_philo_eat_enough(t_philo *philo)
-{
-	int	i;
+// void	*check_dead(void *args)
+// {
+// 	t_philo		*philo;
 
-	i = 0;
-	while (i < philo->info->nbr_of_philosophers)
-	{
-		if (philo[i].info->nb_of_meals != 1
-			&& philo->info->nb_of_meals == philo->meal_counter)
-		{
-			philo->dead = 1;
-		}
-		i++;
-	}
-	return (0);
-}
+// 	philo = args;
+// 	while (philo->dead != 1)
+// 		check_philo_eat_enough(philo->info);
+// 	return (NULL);
+// }
 
-void	*check_dead(void *args)
-{
-	t_philo		*philo;
-	long int	curr_time;
-	int			i;
-	long int	time;
-
-	i = 0;
-	philo = (t_philo *)(args);
-	curr_time = actual_time_msec();
-	time = elapsed_time(philo->info);
-	while (i < philo[i].info->nbr_of_philosophers)
-	{
-		if (curr_time - philo[i].last_meal
-			>= philo[i].info->time_to_die)
-		{
-			philo[i].dead = 1;
-			display_status(time, philo, "philo is dead\n");
-			exit (0);
-		}
-		i++;
-	}
-	check_philo_eat_enough(philo);
-	return (NULL);
-}
+// void	check_philo_eat_enough(t_info *info)
+// {
+// 	int			i;
+// 	int			meal;
+	
+// 	i = 0;
+// 	meal = 0;
+// 	// curr_time = actual_time_msec();
+// 	while (i < info->nbr_of_philosophers)
+// 	{
+// 		if (info->nb_of_meals != -1
+// 			&& info->philo[i].meal_counter >= info->nb_of_meals)
+// 		{
+// 			meal++;
+// 			if (meal == info->nbr_of_philosophers)
+// 			{
+// 				printf("last meal%d\n", info->philo->last_meal);
+// 				info->philo->dead = 1;
+// 			}
+// 		}
+// 		if (elapsed_time(info) - info->philo[i].last_meal
+// 			>= info->time_to_die)
+// 		{
+// 			info->philo->dead = 1;
+// 			if (info->philo->dead == 1)
+// 			{
+// 				display_status(elapsed_time(info), info->philo, "philo is dead\n");
+// 				break;
+// 			}
+// 		}
+// 		i++;
+// 	}
+// }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:21:43 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/15 14:32:37 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/02/20 16:17:46 by mac              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,6 @@ void			eat_philo(t_philo	*philo);
 int				dead_philos_thread(t_philo *philo);
 void			*check_dead(void	*args);
 void			one_philo(t_philo *philo);
-int				check_philo_eat_enough(t_philo *philo);
+void				check_philo_eat_enough(t_info *info);
 
 #endif
