@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 13:52:01 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/19 07:43:45 by mac              ###   ########.fr       */
+/*   Updated: 2023/02/21 16:05:21 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,22 @@ int	parsing(int argc, char **argv, t_info *info)
 	pthread_mutex_init(&info->status, NULL);
 	if (valid_arguments(argc, argv))
 	{
-		info->nbr_of_philosophers = ft_atoi(argv[1]);
-		info->time_to_die = ft_atoi(argv[2]);
-		info->time_to_eat = ft_atoi(argv[3]);
-		info->time_to_sleep = ft_atoi(argv[4]);
+		info->nbr_of_philosophers = ft_atoi_long(argv[1]);
+		info->time_to_die = ft_atoi_long(argv[2]);
+		info->time_to_eat = ft_atoi_long(argv[3]);
+		info->time_to_sleep = ft_atoi_long(argv[4]);
 		if (argc == 6)
-			info->nb_of_meals = ft_atoi(argv[5]);
-		info->nb_of_meals = -1;
+			info->nb_of_meals = ft_atoi_long(argv[5]);
+		else
+			info->nb_of_meals = -1;
+		if ((info->nb_of_meals < 1 && argc == 6)
+			|| info->nbr_of_philosophers < 1 || info->time_to_die < 0
+			|| info->time_to_eat < 0 || info->time_to_sleep < 0)
+			return (1);
 	}
 	else
 	{
-		printf("few arguments\n");
+		printf(RED"invalid arguments\n");
 		exit(0);
 	}
 	return (1);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:30:56 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/20 18:52:36 by mac              ###   ########.fr       */
+/*   Updated: 2023/02/21 17:45:41 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,31 @@
 void	*routine(void *arg)
 {
 	t_philo		*philo;
-	long int	time;
+	int			is_dead;
 
 	philo = (t_philo *)arg;
-	time = elapsed_time(philo->info);
 	if (philo->philo_id % 2 == 0)
 		ms_sleep(philo->info->time_to_eat);
-	while (philo->dead == 0)
+	while (1)
 	{
+		pthread_mutex_lock(&philo->info->mutex_dead);
+		is_dead = philo->dead;
+		pthread_mutex_unlock(&philo->info->mutex_dead);
 		if (take_fork(philo))
 			break ;
-		if (philo->dead == 0)
+		if (is_dead == 0)
 		{
 			eat_philo(philo);
-			display_status(time, philo, YELLOW"philo is thinking");
-			ms_sleep(philo->info->time_to_think);
+			philo_sleep(philo);
 		}
+		if (is_dead == 0)
+		{
+			display_status(elapsed_time(philo->info),
+				philo, YELLOW"philo is thinking");
+			usleep(50);
+		}
+		if (is_dead)
+			break ;
 	}
 	return (NULL);
 }
@@ -49,6 +58,7 @@ t_info	*set_philos(t_info	*info)
 	{
 		info->philo[i].philo_id = i + 1;
 		pthread_mutex_init(&info->philo[i].l_fork, NULL);
+		pthread_mutex_init(&info->mutex_dead, NULL);
 		if (i == info->nbr_of_philosophers - 1)
 			info->philo[i].r_fork = info->philo[0].l_fork;
 		else

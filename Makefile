@@ -6,7 +6,7 @@
 #    By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/15 20:19:13 by hkahsay           #+#    #+#              #
-#    Updated: 2023/02/09 11:31:35 by hkahsay          ###   ########.fr        #
+#    Updated: 2023/02/21 17:32:27 by hkahsay          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ SRCS = 	src/check_num.c \
 		src/main.c \
 		src/get_time.c \
 		src/simulation.c \
+		src/check_dead.c \
+
 
 OBJS			= ${SRCS:.c=.o}	
 
@@ -24,7 +26,7 @@ CC				= gcc
 
 RM				= rm -f
 
-CFLAGS			= -g -Wall -Werror -Wextra -pthread -fsanitize=address
+CFLAGS			= -g -Wall -Werror -Wextra -pthread -fsanitize=thread
 
 #Unzip
 UNZIP =			unzip -X -o -q

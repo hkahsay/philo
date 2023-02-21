@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:21:43 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/20 18:46:44 by mac              ###   ########.fr       */
+/*   Updated: 2023/02/21 16:17:45 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # define RED	"\033[1m\033[31m"
 # define YELLOW  "\033[33m"
 # define BLUE    "\033[34m"
+# define WHITE   "\033[1;37m"
 
 typedef struct s_philo
 {
@@ -53,15 +54,14 @@ typedef struct s_info
 	int				nb_of_meals;
 	int				meals;
 	t_philo			*philo;
-	// t_philo			*first_philo;
 	long int		end;
 	long int		time_to_start;
 	pthread_mutex_t	mutex_stop;
 	pthread_mutex_t	mutex_eat;
+	pthread_mutex_t	mutex_dead;
 	pthread_mutex_t	status;
 
 }					t_info;
-
 
 //--------utils----------
 int				is_blank(char c);
@@ -85,6 +85,8 @@ void			eat_philo(t_philo	*philo);
 //---------check if philo is dead-----
 void			*check_dead(void	*args);
 void			one_philo(t_philo *philo);
-void			check_philo_eat_enough(t_info *info);
+// void			check_philo_eat_enough(t_info *info);
+void			philo_death_check(t_info *info);
+void			philo_sleep(t_philo *philo);
 
 #endif

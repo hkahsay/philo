@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_num.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mac <mac@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:15:26 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/01/31 18:43:38 by mac              ###   ########.fr       */
+/*   Updated: 2023/02/21 15:19:12 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,29 +19,6 @@ int	is_blank(char c)
 	return (0);
 }
 
-int	ft_atoi(char *str)
-{
-	int	nb;
-	int	sign;
-
-	nb = 0;
-	sign = 1;
-	while (is_blank(*str))
-		str++;
-	if (*str == '+')
-		str++;
-	if (*str == '-')
-	{
-		sign = sign * -1;
-		str++;
-	}
-	while (*str >= '0' && *str <= '9')
-	{
-		nb = nb * 10 + *str++ - 48;
-	}
-	return (nb * sign);
-}
-
 long	ft_atoi_long(char *str)
 {
 	long int	nb;
@@ -51,23 +28,27 @@ long	ft_atoi_long(char *str)
 	sign = 1;
 	while (is_blank(*str))
 		str++;
-	if (*str == '+')
-		str++;
 	if (*str == '-')
-	{
 		sign = -1;
+	if (*str == '+' || *str == '-')
 		str++;
-	}
 	while (*str >= '0' && *str <= '9')
 	{
 		nb = nb * 10 + *str++ - 48;
+	}
+	if (nb > MAX_INT || nb < MIN_INT || nb < 0)
+	{
+		printf(RED"ERROR\n");
+		exit(0);
+		printf("%ld\n", nb);
+		return (0);
 	}
 	return ((int)nb * sign);
 }
 
 int	is_num_l(char	*str)
 {
-	long int	nbr;
+	long int	nb;
 
 	while (*str)
 	{
@@ -76,11 +57,6 @@ int	is_num_l(char	*str)
 		else
 			return (0);
 	}
-	nbr = ft_atoi_long(str);
-	if (nbr > MAX_INT && nbr < MIN_INT)
-	{
-		printf(RED"ERRtOR\n");
-		return (0);
-	}
+	nb = ft_atoi_long(str);
 	return (1);
 }
