@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 12:16:31 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/21 18:00:45 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/03/01 16:01:38 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,29 +28,29 @@ void	check_philo_eat_enough(t_info *info)
 {
 	int	meal;
 	int	i;
-	int	is_finished;
+	// int	is_finished;
 
 	meal = 0;
-	i = 0;
-	while (i < info->nbr_of_philosophers)
+	i = -1;
+	while (++i < info->nbr_of_philosophers)
 	{
-		pthread_mutex_lock(&info->mutex_eat);
-		is_finished = (info->philo[i].meal_counter >= info->nb_of_meals \
-			&& info->nb_of_meals != -1);
-		pthread_mutex_unlock(&info->mutex_eat);
-		if (is_finished)
+		pthread_mutex_lock(&info->philo[i].mutex_eat);
+		// is_finished = (info->philo[i].meal_counter >= info->nb_of_meals \
+		// 	&& info->nb_of_meals != -1);
+		if ((info->philo[i].meal_counter >= info->nb_of_meals \
+			&& info->nb_of_meals != -1))
 		{
+			pthread_mutex_unlock(&info->philo[i].mutex_eat);
 			meal++;
 			if (meal == info->nbr_of_philosophers)
 			{
-				pthread_mutex_lock(&info->mutex_dead);
-				info->philo->dead = 1;
-				pthread_mutex_unlock(&info->mutex_dead);
-				if (info->philo->dead == 1)
-					exit (0);
+				pthread_mutex_lock(&info->philo[i].mutex_dead);
+				info->philo[i].dead = 1;
+				pthread_mutex_unlock(&info->philo[i].mutex_dead);
 			}
 		}
-		i++;
+		else
+			pthread_mutex_unlock(&info->philo[i].mutex_eat);
 	}
 }
 
@@ -65,17 +65,20 @@ void	philo_death_check(t_info *info)
 	check_philo_eat_enough(info);
 	while (++i < info->nbr_of_philosophers)
 	{
-		pthread_mutex_lock(&(info->mutex_eat));
+		pthread_mutex_lock(&(info->philo[i].mutex_last_meal));
 		is_finished = time - info->philo[i].last_meal
 			>= info->time_to_die;
-		pthread_mutex_unlock(&(info->mutex_eat));
+		pthread_mutex_unlock(&(info->philo[i].mutex_last_meal));
 		if (is_finished)
 		{
-			pthread_mutex_lock(&info->mutex_dead);
+			pthread_mutex_lock(&info->philo->mutex_dead);
 			info->philo->dead = 1;
-			display_status(time, info->philo, YELLOW"philo is dead\n");
-			pthread_mutex_unlock(&info->mutex_dead);
-			exit (0);
+			pthread_mutex_unlock(&info->philo->mutex_dead);
+			if (info->philo->dead == 1)
+			{
+				display_status(time, info->philo, YELLOW"philo is dead\n");
+				break ;
+			}
 		}
 	}
 }

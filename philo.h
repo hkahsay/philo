@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:21:43 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/21 16:17:45 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/03/01 15:18:28 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ typedef struct s_philo
 	int				philo_id;
 	int				meal_counter;
 	int				dead;
+	pthread_mutex_t	mutex_dead;
+	pthread_mutex_t	mutex_eat;
+	pthread_mutex_t	mutex_last_meal;
 	struct s_info	*info;
 }					t_philo;
 
@@ -56,9 +59,7 @@ typedef struct s_info
 	t_philo			*philo;
 	long int		end;
 	long int		time_to_start;
-	pthread_mutex_t	mutex_stop;
-	pthread_mutex_t	mutex_eat;
-	pthread_mutex_t	mutex_dead;
+	// pthread_mutex_t	mutex_stop;
 	pthread_mutex_t	status;
 
 }					t_info;
@@ -88,5 +89,8 @@ void			one_philo(t_philo *philo);
 // void			check_philo_eat_enough(t_info *info);
 void			philo_death_check(t_info *info);
 void			philo_sleep(t_philo *philo);
+
+void			*destroy_m(t_philo *philo);
+
 
 #endif

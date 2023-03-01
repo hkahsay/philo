@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 09:08:57 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/21 16:06:13 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/03/01 13:43:46 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,16 @@ void	ms_sleep(int m_sec)
 
 long int	elapsed_time(t_info	*info)
 {
-	info->end = actual_time_msec();
-	return (info->end - info->time_to_start);
+	long int	curr_time;
+
+	curr_time = actual_time_msec();
+	return (curr_time - info->time_to_start);
 }
 
 void	display_status(long int t_ms, t_philo *philo, char *str)
 {
 	pthread_mutex_lock(&(philo->info->status));
 	if (t_ms >= 0)
-		printf(WHITE"time  %ld  philo %d %s\n ", t_ms, philo->philo_id, str);
+		printf(WHITE"time  %ld philo  %d %s \n", t_ms, philo->philo_id, str);
 	pthread_mutex_unlock(&(philo->info->status));
 }

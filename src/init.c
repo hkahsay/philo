@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:30:56 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/21 17:45:41 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/03/01 15:18:28 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,31 +18,36 @@
 void	*routine(void *arg)
 {
 	t_philo		*philo;
-	int			is_dead;
 
 	philo = (t_philo *)arg;
 	if (philo->philo_id % 2 == 0)
 		ms_sleep(philo->info->time_to_eat);
 	while (1)
 	{
-		pthread_mutex_lock(&philo->info->mutex_dead);
-		is_dead = philo->dead;
-		pthread_mutex_unlock(&philo->info->mutex_dead);
 		if (take_fork(philo))
 			break ;
-		if (is_dead == 0)
+		pthread_mutex_lock(&philo->mutex_dead);
+		if (philo->dead == 0)
 		{
+			pthread_mutex_unlock(&philo->mutex_dead);
 			eat_philo(philo);
 			philo_sleep(philo);
+			pthread_mutex_lock(&philo->mutex_dead);
 		}
-		if (is_dead == 0)
+		if (philo->dead == 0)
 		{
+			pthread_mutex_unlock(&philo->mutex_dead);
 			display_status(elapsed_time(philo->info),
 				philo, YELLOW"philo is thinking");
 			usleep(50);
+			pthread_mutex_lock(&philo->mutex_dead);
 		}
-		if (is_dead)
+		if (philo->dead)
+		{
+			pthread_mutex_unlock(&philo->mutex_dead);
 			break ;
+		}
+		pthread_mutex_unlock(&philo->mutex_dead);
 	}
 	return (NULL);
 }
@@ -57,8 +62,10 @@ t_info	*set_philos(t_info	*info)
 	while (i < info->nbr_of_philosophers)
 	{
 		info->philo[i].philo_id = i + 1;
+		pthread_mutex_init(&info->philo[i].mutex_last_meal, NULL);
+		pthread_mutex_init(&info->philo[i].mutex_eat, NULL);
 		pthread_mutex_init(&info->philo[i].l_fork, NULL);
-		pthread_mutex_init(&info->mutex_dead, NULL);
+		pthread_mutex_init(&info->philo[i].mutex_dead, NULL);
 		if (i == info->nbr_of_philosophers - 1)
 			info->philo[i].r_fork = info->philo[0].l_fork;
 		else

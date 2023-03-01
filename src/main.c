@@ -5,19 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/08 12:38:43 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/21 16:09:33 by hkahsay          ###   ########.fr       */
+/*   Created: 2023/03/01 12:55:34 by hkahsay           #+#    #+#             */
+/*   Updated: 2023/03/01 15:18:28 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"../philo.h"
 
-int main(int argc, char **argv)
+void	*destroy_m(t_philo *philo)
 {
-    t_info  *info;
+	int	i;
 
-    info = malloc(sizeof(t_info));
-    parsing(argc, argv, info);
-    create_threads(info);
-    return (0);
+	i = -1;
+	while (++i < philo->info->nbr_of_philosophers)
+	{
+		pthread_mutex_destroy(&philo[i].l_fork);
+		pthread_mutex_destroy(&philo[i].r_fork);
+		pthread_mutex_destroy(&philo->mutex_dead);
+		pthread_mutex_destroy(&philo[i].mutex_last_meal);
+	}
+	return (0);
+}
+
+int	main(int agc, char **argv)
+{
+	t_info	*info;
+
+	info = malloc(sizeof(t_info));
+	parsing(agc, argv, info);
+	create_threads(info);
+	destroy_m(info->philo);
+	free(info->philo);
+	free(info);
+	return (0);
 }
