@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:21:43 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/03/01 15:18:28 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/03/02 17:13:41 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,15 @@
 
 typedef struct s_philo
 {
-	pthread_mutex_t	l_fork;
+	pthread_mutex_t	*l_fork;
 	pthread_mutex_t	r_fork;
 	int				last_meal;
 	pthread_t		tid;
 	int				philo_id;
 	int				meal_counter;
-	int				dead;
-	pthread_mutex_t	mutex_dead;
+	// int				dead;
+	pthread_t		tid_dead;
+	pthread_mutex_t	mutex_meal_count;
 	pthread_mutex_t	mutex_eat;
 	pthread_mutex_t	mutex_last_meal;
 	struct s_info	*info;
@@ -53,11 +54,11 @@ typedef struct s_info
 	int				time_to_sleep;
 	int				time_to_think;
 	int				stop;
-	pthread_t		tid_dead;
 	int				nb_of_meals;
 	int				meals;
 	t_philo			*philo;
-	long int		end;
+	pthread_mutex_t	mutex_dead_stop;
+	// long int		end;
 	long int		time_to_start;
 	// pthread_mutex_t	mutex_stop;
 	pthread_mutex_t	status;
@@ -86,11 +87,9 @@ void			eat_philo(t_philo	*philo);
 //---------check if philo is dead-----
 void			*check_dead(void	*args);
 void			one_philo(t_philo *philo);
-// void			check_philo_eat_enough(t_info *info);
-void			philo_death_check(t_info *info);
+void			check_philo_eat_enough(t_info *info);
+void				philo_death_check(t_info *info);
 void			philo_sleep(t_philo *philo);
-
 void			*destroy_m(t_philo *philo);
-
 
 #endif

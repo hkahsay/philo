@@ -1,0 +1,120 @@
+[1;37mtime  0 philo  1 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  1 philo  1 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  1 philo  1 [1m[31mphilo is eating
+ 
+[1;37mtime  1 philo  3 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  301 philo  1 [34mphilo is sleeping 
+[1;37mtime  301 philo  3 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  301 philo  3 [1m[31mphilo is eating
+ 
+[1;37mtime  301 philo  2 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  501 philo  1 [33mphilo is thinking 
+[1;37mtime  601 philo  3 [34mphilo is sleeping 
+[1;37mtime  601 philo  1 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  601 philo  2 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  601 philo  2 [1m[31mphilo is eating
+ 
+[1;37mtime  801 philo  3 [33mphilo is thinking 
+[1;37mtime  901 philo  2 [34mphilo is sleeping 
+[1;37mtime  901 philo  1 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  901 philo  1 [1m[31mphilo is eating
+ 
+[1;37mtime  901 philo  3 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  1101 philo  2 [33mphilo is thinking 
+[1;37mtime  1201 philo  1 [34mphilo is sleeping 
+[1;37mtime  1201 philo  3 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  1201 philo  3 [1m[31mphilo is eating
+ 
+[1;37mtime  1201 philo  2 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  1401 philo  1 [33mphilo is thinking 
+[1;37mtime  1501 philo  3 [34mphilo is sleeping 
+[1;37mtime  1501 philo  2 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  1501 philo  1 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  1501 philo  2 [1m[31mphilo is eating
+ 
+[1;37mtime  1701 philo  3 [33mphilo is thinking 
+[1;37mtime  1801 philo  2 [34mphilo is sleeping 
+[1;37mtime  1801 philo  1 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  1801 philo  1 [1m[31mphilo is eating
+ 
+[1;37mtime  1801 philo  3 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  2001 philo  2 [33mphilo is thinking 
+[1;37mtime  2101 philo  1 [34mphilo is sleeping 
+[1;37mtime  2101 philo  3 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  2101 philo  3 [1m[31mphilo is eating
+ 
+[1;37mtime  2101 philo  2 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  2301 philo  1 [33mphilo is thinking 
+[1;37mtime  2401 philo  3 [34mphilo is sleeping 
+[1;37mtime  2401 philo  2 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  2401 philo  2 [1m[31mphilo is eating
+ 
+[1;37mtime  2401 philo  1 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  2601 philo  3 [33mphilo is thinking 
+[1;37mtime  2701 philo  2 [34mphilo is sleeping 
+[1;37mtime  2701 philo  1 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  2701 philo  1 [1m[31mphilo is eating
+ 
+[1;37mtime  2701 philo  3 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  2901 philo  2 [33mphilo is thinking 
+[1;37mtime  3001 philo  1 [34mphilo is sleeping 
+[1;37mtime  3001 philo  3 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  3001 philo  3 [1m[31mphilo is eating
+ 
+[1;37mtime  3001 philo  2 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  3201 philo  1 [33mphilo is thinking 
+[1;37mtime  3301 philo  3 [34mphilo is sleeping 
+[1;37mtime  3301 philo  2 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  3301 philo  2 [1m[31mphilo is eating
+ 
+[1;37mtime  3301 philo  1 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  3501 philo  3 [33mphilo is thinking 
+[1;37mtime  3601 philo  2 [34mphilo is sleeping 
+[1;37mtime  3601 philo  1 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  3601 philo  1 [1m[31mphilo is eating
+ 
+[1;37mtime  3601 philo  3 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  3801 philo  2 [33mphilo is thinking 
+[1;37mtime  3901 philo  1 [34mphilo is sleeping 
+[1;37mtime  3901 philo  3 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  3901 philo  3 [1m[31mphilo is eating
+ 
+[1;37mtime  3901 philo  2 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  4101 philo  1 [33mphilo is thinking 
+[1;37mtime  4201 philo  3 [34mphilo is sleeping 
+[1;37mtime  4201 philo  2 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  4201 philo  2 [1m[31mphilo is eating
+ 
+[1;37mtime  4201 philo  1 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  4401 philo  3 [33mphilo is thi
