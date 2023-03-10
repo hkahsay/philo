@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 09:08:57 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/03/01 13:43:46 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/03/09 15:41:17 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ms_sleep(int m_sec)
 
 	start_time_ms = actual_time_msec();
 	while (actual_time_msec() - start_time_ms < m_sec)
-		usleep(m_sec);
+		usleep(m_sec / 10);
 }
 
 long int	elapsed_time(t_info	*info)
@@ -58,7 +58,19 @@ long int	elapsed_time(t_info	*info)
 void	display_status(long int t_ms, t_philo *philo, char *str)
 {
 	pthread_mutex_lock(&(philo->info->status));
-	if (t_ms >= 0)
-		printf(WHITE"time  %ld philo  %d %s \n", t_ms, philo->philo_id, str);
+	// pthread_mutex_lock(&philo->info->mutex_dead);
+	// if (t_ms > 0)
+	printf(WHITE"time  %ld philo  %d %s \n", t_ms, philo->philo_id, str);
+	// pthread_mutex_unlock(&philo->info->mutex_dead);
 	pthread_mutex_unlock(&(philo->info->status));
 }
+
+// void	stop_status(long int t_ms, t_philo *philo, char *str)
+// {
+// 	pthread_mutex_lock(&(philo->info->status));
+// 	pthread_mutex_lock(&philo->info->mutex_dead);
+// 	if (t_ms > 0 && philo->info->dead == 1)
+// 		printf(WHITE"time  %ld philo  %d %s \n", t_ms, philo->philo_id, str);
+// 	pthread_mutex_unlock(&philo->info->mutex_dead);
+// 	pthread_mutex_unlock(&(philo->info->status));
+// }

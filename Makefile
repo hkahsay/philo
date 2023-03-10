@@ -6,7 +6,7 @@
 #    By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/15 20:19:13 by hkahsay           #+#    #+#              #
-#    Updated: 2023/03/01 15:40:58 by hkahsay          ###   ########.fr        #
+#    Updated: 2023/03/09 15:13:45 by hkahsay          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ CC				= gcc
 
 RM				= rm -f
 
-CFLAGS			= -g -Wall -Werror -Wextra -pthread  -fsanitize=address #-fsanitize=thread 
+CFLAGS			= -g -Wall -Werror -Wextra -pthread  -fsanitize=thread #fsanitize=address 
 
 #Unzip
 UNZIP =			unzip -X -o -q

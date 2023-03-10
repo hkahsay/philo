@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:30:56 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/03/01 15:18:28 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/03/09 15:48:02 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,28 +26,33 @@ void	*routine(void *arg)
 	{
 		if (take_fork(philo))
 			break ;
-		pthread_mutex_lock(&philo->mutex_dead);
-		if (philo->dead == 0)
+		pthread_mutex_lock(&philo->info->mutex_dead);
+		if (philo->info->dead == 0)
 		{
-			pthread_mutex_unlock(&philo->mutex_dead);
+			pthread_mutex_unlock(&philo->info->mutex_dead);
 			eat_philo(philo);
 			philo_sleep(philo);
-			pthread_mutex_lock(&philo->mutex_dead);
+			pthread_mutex_lock(&philo->info->mutex_dead);
 		}
-		if (philo->dead == 0)
+		// if (philo->info->dead == 0)
+		// {
+		// 	philo_sleep(philo);
+		// 	pthread_mutex_lock(&philo->info->mutex_dead);
+		// }
+		if (philo->info->dead == 0)
 		{
-			pthread_mutex_unlock(&philo->mutex_dead);
+			pthread_mutex_unlock(&philo->info->mutex_dead);
 			display_status(elapsed_time(philo->info),
 				philo, YELLOW"philo is thinking");
 			usleep(50);
-			pthread_mutex_lock(&philo->mutex_dead);
+			pthread_mutex_lock(&philo->info->mutex_dead);
 		}
-		if (philo->dead)
+		if (philo->info->dead)
 		{
-			pthread_mutex_unlock(&philo->mutex_dead);
+			pthread_mutex_unlock(&philo->info->mutex_dead);
 			break ;
 		}
-		pthread_mutex_unlock(&philo->mutex_dead);
+		pthread_mutex_unlock(&philo->info->mutex_dead);
 	}
 	return (NULL);
 }
@@ -64,18 +69,17 @@ t_info	*set_philos(t_info	*info)
 		info->philo[i].philo_id = i + 1;
 		pthread_mutex_init(&info->philo[i].mutex_last_meal, NULL);
 		pthread_mutex_init(&info->philo[i].mutex_eat, NULL);
-		pthread_mutex_init(&info->philo[i].l_fork, NULL);
-		pthread_mutex_init(&info->philo[i].mutex_dead, NULL);
-		if (i == info->nbr_of_philosophers - 1)
-			info->philo[i].r_fork = info->philo[0].l_fork;
-		else
-			info->philo[i].r_fork = info->philo[i + 1].l_fork;
+		pthread_mutex_init(&info->philo[i].r_fork, NULL);
+		if (i != 0)
+			info->philo[i].l_fork = &info->philo[i - 1].r_fork;
 		info->philo[i].info = info;
 		info->philo[i].last_meal = 0;
 		info->philo[i].meal_counter = 0;
-		info->philo[i].dead = 0;
+		info->dead = 0;
 		i++;
 	}
+	info->philo[0].l_fork = &info->philo[info->nbr_of_philosophers - 1].r_fork;
+	pthread_mutex_init(&info->mutex_dead, NULL);
 	return (info);
 }
 
@@ -86,22 +90,25 @@ int	create_threads(t_info *info)
 	set_philos(info);
 	if (info->nbr_of_philosophers == 1)
 		one_philo(info->philo);
-	i = 0;
-	while (i < info->nbr_of_philosophers)
+	else
 	{
-		if (pthread_create(&info->philo[i].tid, NULL,
-				&routine, (void *)&(info->philo[i])) != 0)
-			return (-1);
-		i++;
+		i = 0;
+		while (i < info->nbr_of_philosophers)
+		{
+			if (pthread_create(&info->philo[i].tid, NULL,
+					&routine, (void *)&(info->philo[i])) != 0)
+				return (-1);
+			i++;
+		}
+		pthread_create(&info->tid_dead, NULL, &check_dead, (void *) info->philo);
+		i = 0;
+		while (i < info->nbr_of_philosophers)
+		{
+			if (pthread_join(info->philo[i].tid, NULL) != 0)
+				return (-1);
+			i++;
+		}
+		pthread_join(info->tid_dead, NULL);
 	}
-	pthread_create(&info->tid_dead, NULL, &check_dead, (void *) info->philo);
-	i = 0;
-	while (i < info->nbr_of_philosophers)
-	{
-		if (pthread_join(info->philo[i].tid, NULL) != 0)
-			return (-1);
-		i++;
-	}
-	pthread_join(info->tid_dead, NULL);
 	return (0);
 }

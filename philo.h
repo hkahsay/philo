@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:21:43 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/03/01 15:18:28 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/03/09 15:41:27 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,17 @@
 # define RED	"\033[1m\033[31m"
 # define YELLOW  "\033[33m"
 # define BLUE    "\033[34m"
+# define GREY "\033[1;30m"
 # define WHITE   "\033[1;37m"
 
 typedef struct s_philo
 {
-	pthread_mutex_t	l_fork;
+	pthread_mutex_t	*l_fork;
 	pthread_mutex_t	r_fork;
 	int				last_meal;
 	pthread_t		tid;
 	int				philo_id;
 	int				meal_counter;
-	int				dead;
-	pthread_mutex_t	mutex_dead;
 	pthread_mutex_t	mutex_eat;
 	pthread_mutex_t	mutex_last_meal;
 	struct s_info	*info;
@@ -52,10 +51,12 @@ typedef struct s_info
 	int				time_to_eat;
 	int				time_to_sleep;
 	int				time_to_think;
-	int				stop;
+	int				dead;
+	// int				stop;
 	pthread_t		tid_dead;
 	int				nb_of_meals;
 	int				meals;
+	pthread_mutex_t	mutex_dead;
 	t_philo			*philo;
 	long int		end;
 	long int		time_to_start;
@@ -76,6 +77,8 @@ void			ms_sleep(int m_sec);
 long int		elapsed_time(t_info *info);
 //------------print or display status--------
 void			display_status(long int t_ms, t_philo *philo, char *str);
+// void			stop_status(long int t_ms, t_philo *philo, char *str);
+
 //---------init data and philos---------
 int				create_threads(t_info *info);
 struct s_info	*set_philos(t_info	*info);
@@ -91,6 +94,5 @@ void			philo_death_check(t_info *info);
 void			philo_sleep(t_philo *philo);
 
 void			*destroy_m(t_philo *philo);
-
 
 #endif

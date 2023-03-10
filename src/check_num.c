@@ -6,7 +6,7 @@
 /*   By: hkahsay <hkahsay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 17:15:26 by hkahsay           #+#    #+#             */
-/*   Updated: 2023/02/21 15:19:12 by hkahsay          ###   ########.fr       */
+/*   Updated: 2023/03/09 16:06:48 by hkahsay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	is_num_l(char	*str)
 
 	while (*str)
 	{
-		if (*str >= '0' && *str < '9')
+		if (*str >= '0' && *str <='9')
 			str++;
 		else
 			return (0);

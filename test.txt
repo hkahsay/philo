@@ -1,0 +1,641 @@
+[1;37mtime  0 philo  1 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  0 philo  1 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  0 philo  1 [1m[31mphilo is eating
+ 
+[1;37mtime  1 philo  3 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  1 philo  3 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  1 philo  3 [1m[31mphilo is eating
+ 
+[1;37mtime  2 philo  5 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  2 philo  5 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  2 philo  5 [1m[31mphilo is eating
+ 
+[1;37mtime  3 philo  7 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  3 philo  7 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  3 philo  7 [1m[31mphilo is eating
+ 
+[1;37mtime  4 philo  9 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  4 philo  9 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  4 philo  9 [1m[31mphilo is eating
+ 
+[1;37mtime  5 philo  11 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  5 philo  11 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  5 philo  11 [1m[31mphilo is eating
+ 
+[1;37mtime  6 philo  13 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  6 philo  13 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  6 philo  13 [1m[31mphilo is eating
+ 
+[1;37mtime  7 philo  15 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  7 philo  15 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  7 philo  15 [1m[31mphilo is eating
+ 
+[1;37mtime  8 philo  17 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  8 philo  17 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  8 philo  17 [1m[31mphilo is eating
+ 
+[1;37mtime  9 philo  19 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  9 philo  19 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  9 philo  19 [1m[31mphilo is eating
+ 
+[1;37mtime  10 philo  21 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  10 philo  21 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  10 philo  21 [1m[31mphilo is eating
+ 
+[1;37mtime  11 philo  23 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  11 philo  23 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  11 philo  23 [1m[31mphilo is eating
+ 
+[1;37mtime  13 philo  25 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  13 philo  25 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  13 philo  25 [1m[31mphilo is eating
+ 
+[1;37mtime  14 philo  27 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  14 philo  27 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  14 philo  27 [1m[31mphilo is eating
+ 
+[1;37mtime  15 philo  29 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  15 philo  29 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  15 philo  29 [1m[31mphilo is eating
+ 
+[1;37mtime  16 philo  31 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  16 philo  31 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  16 philo  31 [1m[31mphilo is eating
+ 
+[1;37mtime  17 philo  33 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  17 philo  33 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  17 philo  33 [1m[31mphilo is eating
+ 
+[1;37mtime  18 philo  35 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  18 philo  35 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  18 philo  35 [1m[31mphilo is eating
+ 
+[1;37mtime  19 philo  37 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  19 philo  37 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  19 philo  37 [1m[31mphilo is eating
+ 
+[1;37mtime  20 philo  39 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  20 philo  39 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  20 philo  39 [1m[31mphilo is eating
+ 
+[1;37mtime  21 philo  41 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  21 philo  41 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  21 philo  41 [1m[31mphilo is eating
+ 
+[1;37mtime  23 philo  43 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  23 philo  43 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  23 philo  43 [1m[31mphilo is eating
+ 
+[1;37mtime  24 philo  45 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  24 philo  45 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  24 philo  45 [1m[31mphilo is eating
+ 
+[1;37mtime  25 philo  47 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  25 philo  47 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  25 philo  47 [1m[31mphilo is eating
+ 
+[1;37mtime  26 philo  49 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  26 philo  49 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  26 philo  49 [1m[31mphilo is eating
+ 
+[1;37mtime  27 philo  51 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  27 philo  51 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  27 philo  51 [1m[31mphilo is eating
+ 
+[1;37mtime  28 philo  53 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  28 philo  53 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  28 philo  53 [1m[31mphilo is eating
+ 
+[1;37mtime  30 philo  55 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  30 philo  55 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  30 philo  55 [1m[31mphilo is eating
+ 
+[1;37mtime  31 philo  57 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  31 philo  57 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  31 philo  57 [1m[31mphilo is eating
+ 
+[1;37mtime  32 philo  59 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  32 philo  59 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  32 philo  59 [1m[31mphilo is eating
+ 
+[1;37mtime  33 philo  61 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  33 philo  61 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  33 philo  61 [1m[31mphilo is eating
+ 
+[1;37mtime  34 philo  63 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  35 philo  63 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  35 philo  63 [1m[31mphilo is eating
+ 
+[1;37mtime  35 philo  65 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  35 philo  65 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  35 philo  65 [1m[31mphilo is eating
+ 
+[1;37mtime  37 philo  67 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  37 philo  67 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  37 philo  67 [1m[31mphilo is eating
+ 
+[1;37mtime  38 philo  69 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  38 philo  69 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  38 philo  69 [1m[31mphilo is eating
+ 
+[1;37mtime  39 philo  71 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  39 philo  71 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  39 philo  71 [1m[31mphilo is eating
+ 
+[1;37mtime  40 philo  73 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  40 philo  73 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  40 philo  73 [1m[31mphilo is eating
+ 
+[1;37mtime  41 philo  75 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  41 philo  75 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  41 philo  75 [1m[31mphilo is eating
+ 
+[1;37mtime  42 philo  77 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  42 philo  77 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  42 philo  77 [1m[31mphilo is eating
+ 
+[1;37mtime  44 philo  79 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  44 philo  79 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  44 philo  79 [1m[31mphilo is eating
+ 
+[1;37mtime  45 philo  81 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  45 philo  81 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  45 philo  81 [1m[31mphilo is eating
+ 
+[1;37mtime  46 philo  83 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  46 philo  83 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  46 philo  83 [1m[31mphilo is eating
+ 
+[1;37mtime  47 philo  85 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  47 philo  85 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  47 philo  85 [1m[31mphilo is eating
+ 
+[1;37mtime  48 philo  87 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  48 philo  87 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  48 philo  87 [1m[31mphilo is eating
+ 
+[1;37mtime  50 philo  89 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  50 philo  89 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  50 philo  89 [1m[31mphilo is eating
+ 
+[1;37mtime  51 philo  91 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  51 philo  91 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  51 philo  91 [1m[31mphilo is eating
+ 
+[1;37mtime  52 philo  93 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  52 philo  93 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  52 philo  93 [1m[31mphilo is eating
+ 
+[1;37mtime  53 philo  95 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  53 philo  95 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  53 philo  95 [1m[31mphilo is eating
+ 
+[1;37mtime  54 philo  97 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  55 philo  97 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  55 philo  97 [1m[31mphilo is eating
+ 
+[1;37mtime  56 philo  99 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  208 philo  17 [34mphilo is sleeping 
+[1;37mtime  209 philo  18 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  209 philo  19 [34mphilo is sleeping 
+[1;37mtime  209 philo  18 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  209 philo  18 [1m[31mphilo is eating
+ 
+[1;37mtime  217 philo  33 [34mphilo is sleeping 
+[1;37mtime  217 philo  34 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  220 philo  39 [34mphilo is sleeping 
+[1;37mtime  224 philo  45 [34mphilo is sleeping 
+[1;37mtime  224 philo  46 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  227 philo  51 [34mphilo is sleeping 
+[1;37mtime  230 philo  55 [34mphilo is sleeping 
+[1;37mtime  230 philo  56 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  232 philo  59 [34mphilo is sleeping 
+[1;37mtime  232 philo  60 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  233 philo  61 [34mphilo is sleeping 
+[1;37mtime  233 philo  60 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  233 philo  60 [1m[31mphilo is eating
+ 
+[1;37mtime  233 philo  15 [34mphilo is sleeping 
+[1;37mtime  234 philo  62 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  238 philo  69 [34mphilo is sleeping 
+[1;37mtime  239 philo  21 [34mphilo is sleeping 
+[1;37mtime  239 philo  71 [34mphilo is sleeping 
+[1;37mtime  240 philo  13 [34mphilo is sleeping 
+[1;37mtime  240 philo  14 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  240 philo  14 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  240 philo  14 [1m[31mphilo is eating
+ 
+[1;37mtime  246 philo  7 [34mphilo is sleeping 
+[1;37mtime  247 philo  85 [34mphilo is sleeping 
+[1;37mtime  248 philo  86 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  250 philo  89 [34mphilo is sleeping 
+[1;37mtime  250 philo  90 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  251 philo  57 [34mphilo is sleeping 
+[1;37mtime  251 philo  58 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  251 philo  58 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  251 philo  58 [1m[31mphilo is eating
+ 
+[1;37mtime  251 philo  56 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  251 philo  56 [1m[31mphilo is eating
+ 
+[1;37mtime  254 philo  3 [34mphilo is sleeping 
+[1;37mtime  255 philo  97 [34mphilo is sleeping 
+[1;37mtime  255 philo  98 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  265 philo  72 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  265 philo  93 [34mphilo is sleeping 
+[1;37mtime  265 philo  94 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  280 philo  67 [34mphilo is sleeping 
+[1;37mtime  281 philo  47 [34mphilo is sleeping 
+[1;37mtime  281 philo  46 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  281 philo  46 [1m[31mphilo is eating
+ 
+[1;37mtime  281 philo  48 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  306 philo  63 [34mphilo is sleeping 
+[1;37mtime  306 philo  64 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  306 philo  62 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  306 philo  62 [1m[31mphilo is eating
+ 
+[1;37mtime  314 philo  22 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  342 philo  91 [34mphilo is sleeping 
+[1;37mtime  342 philo  90 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  342 philo  90 [1m[31mphilo is eating
+ 
+[1;37mtime  342 philo  92 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  342 philo  92 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  342 philo  92 [1m[31mphilo is eating
+ 
+[1;37mtime  396 philo  40 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  408 philo  17 [33mphilo is thinking 
+[1;37mtime  408 philo  17 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  409 philo  19 [33mphilo is thinking 
+[1;37mtime  409 philo  18 [34mphilo is sleeping 
+[1;37mtime  409 philo  17 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  409 philo  17 [1m[31mphilo is eating
+ 
+[1;37mtime  409 philo  19 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  409 philo  19 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  409 philo  19 [1m[31mphilo is eating
+ 
+[1;37mtime  411 philo  94 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  411 philo  95 [34mphilo is sleeping 
+[1;37mtime  411 philo  96 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  411 philo  94 [1m[31mphilo is eating
+ 
+[1;37mtime  411 philo  96 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  411 philo  96 [1m[31mphilo is eating
+ 
+[1;37mtime  417 philo  33 [33mphilo is thinking 
+[1;37mtime  417 philo  33 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  420 philo  39 [33mphilo is thinking 
+[1;37mtime  420 philo  39 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  424 philo  45 [33mphilo is thinking 
+[1;37mtime  424 philo  45 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  427 philo  51 [33mphilo is thinking 
+[1;37mtime  427 philo  51 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  427 philo  51 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  427 philo  51 [1m[31mphilo is eating
+ 
+[1;37mtime  430 philo  55 [33mphilo is thinking 
+[1;37mtime  430 philo  55 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  433 philo  61 [33mphilo is thinking 
+[1;37mtime  433 philo  15 [33mphilo is thinking 
+[1;37mtime  433 philo  60 [34mphilo is sleeping 
+[1;37mtime  433 philo  61 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  434 philo  11 [34mphilo is sleeping 
+[1;37mtime  438 philo  69 [33mphilo is thinking 
+[1;37mtime  438 philo  69 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  438 philo  69 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  438 philo  69 [1m[31mphilo is eating
+ 
+[1;37mtime  439 philo  71 [33mphilo is thinking 
+[1;37mtime  439 philo  21 [33mphilo is thinking 
+[1;37mtime  439 philo  71 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  439 philo  21 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  440 philo  13 [33mphilo is thinking 
+[1;37mtime  440 philo  14 [34mphilo is sleeping 
+[1;37mtime  440 philo  15 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  440 philo  15 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  440 philo  15 [1m[31mphilo is eating
+ 
+[1;37mtime  440 philo  13 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  440 philo  13 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  440 philo  13 [1m[31mphilo is eating
+ 
+[1;37mtime  445 philo  28 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  445 philo  27 [34mphilo is sleeping 
+[1;37mtime  446 philo  7 [33mphilo is thinking 
+[1;37mtime  446 philo  7 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  446 philo  7 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  446 philo  7 [1m[31mphilo is eating
+ 
+[1;37mtime  447 philo  85 [33mphilo is thinking 
+[1;37mtime  447 philo  85 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  450 philo  89 [33mphilo is thinking 
+[1;37mtime  450 philo  89 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  451 philo  58 [34mphilo is sleeping 
+[1;37mtime  451 philo  56 [34mphilo is sleeping 
+[1;37mtime  451 philo  55 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  451 philo  55 [1m[31mphilo is eating
+ 
+[1;37mtime  454 philo  3 [33mphilo is thinking 
+[1;37mtime  454 philo  3 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  454 philo  3 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  454 philo  3 [1m[31mphilo is eating
+ 
+[1;37mtime  455 philo  97 [33mphilo is thinking 
+[1;37mtime  465 philo  93 [33mphilo is thinking 
+[1;37mtime  468 philo  5 [34mphilo is sleeping 
+[1;37mtime  468 philo  6 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  480 philo  67 [33mphilo is thinking 
+[1;37mtime  480 philo  67 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  480 philo  67 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  480 philo  67 [1m[31mphilo is eating
+ 
+[1;37mtime  481 philo  47 [33mphilo is thinking 
+[1;37mtime  481 philo  45 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  481 philo  46 [34mphilo is sleeping 
+[1;37mtime  481 philo  45 [1m[31mphilo is eating
+ 
+[1;37mtime  481 philo  47 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  506 philo  62 [34mphilo is sleeping 
+[1;37mtime  506 philo  61 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  506 philo  61 [1m[31mphilo is eating
+ 
+[1;37mtime  523 philo  1 [34mphilo is sleeping 
+[1;37mtime  523 philo  2 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  523 philo  99 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  523 philo  99 [1m[31mphilo is eating
+ 
+[1;37mtime  542 philo  91 [33mphilo is thinking 
+[1;37mtime  542 philo  92 [34mphilo is sleeping 
+[1;37mtime  542 philo  93 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  542 philo  90 [34mphilo is sleeping 
+[1;37mtime  542 philo  89 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  542 philo  89 [1m[31mphilo is eating
+ 
+[1;37mtime  542 philo  91 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  542 philo  91 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  542 philo  91 [1m[31mphilo is eating
+ 
+[1;37mtime  605 philo  37 [34mphilo is sleeping 
+[1;37mtime  605 philo  38 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  609 philo  19 [34mphilo is sleeping 
+[1;37mtime  609 philo  18 [33mphilo is thinking 
+[1;37mtime  609 philo  17 [34mphilo is sleeping 
+[1;37mtime  609 philo  18 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  609 philo  18 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  609 philo  18 [1m[31mphilo is eating
+ 
+[1;37mtime  610 philo  29 [34mphilo is sleeping 
+[1;37mtime  610 philo  30 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  610 philo  28 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  610 philo  28 [1m[31mphilo is eating
+ 
+[1;37mtime  611 philo  94 [34mphilo is sleeping 
+[1;37mtime  611 philo  93 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  611 philo  95 [33mphilo is thinking 
+[1;37mtime  611 philo  93 [1m[31mphilo is eating
+ 
+[1;37mtime  611 philo  95 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  612 philo  96 [34mphilo is sleeping 
+[1;37mtime  612 philo  95 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  612 philo  97 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  612 philo  95 [1m[31mphilo is eating
+ 
+[1;37mtime  627 philo  51 [34mphilo is sleeping 
+[1;37mtime  627 philo  52 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  633 philo  60 [33mphilo is thinking 
+[1;37mtime  633 philo  60 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  634 philo  11 [33mphilo is thinking 
+[1;37mtime  634 philo  11 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  634 philo  11 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  634 philo  11 [1m[31mphilo is eating
+ 
+[1;37mtime  638 philo  69 [34mphilo is sleeping 
+[1;37mtime  640 philo  14 [33mphilo is thinking 
+[1;37mtime  640 philo  15 [34mphilo is sleeping 
+[1;37mtime  640 philo  13 [34mphilo is sleeping 
+[1;37mtime  640 philo  14 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  640 philo  14 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  640 philo  14 [1m[31mphilo is eating
+ 
+[1;37mtime  645 philo  27 [33mphilo is thinking 
+[1;37mtime  645 philo  27 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  646 philo  7 [34mphilo is sleeping 
+[1;37mtime  646 philo  6 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  646 philo  6 [1m[31mphilo is eating
+ 
+[1;37mtime  651 philo  56 [33mphilo is thinking 
+[1;37mtime  651 philo  55 [34mphilo is sleeping 
+[1;37mtime  651 philo  58 [33mphilo is thinking 
+[1;37mtime  651 philo  56 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  651 philo  56 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  651 philo  56 [1m[31mphilo is eating
+ 
+[1;37mtime  651 philo  58 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  651 philo  58 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  651 philo  58 [1m[31mphilo is eating
+ 
+[1;37mtime  654 philo  3 [34mphilo is sleeping 
+[1;37mtime  654 philo  2 [1m[32mphilo has taken R_fork
+ 
+[1;37mtime  654 philo  2 [1m[31mphilo is eating
+ 
+[1;37mtime  668 philo  5 [33mphilo is thinking 
+[1;37mtime  668 philo  5 [1m[32mphilo has taken L_fork
+ 
+[1;37mtime  680 philo  67 [34mphilo is sleeping 
+[1;37mtime  681 philo  46 [33mphilo is thinking 
+[1;37mtime  681 philo  45 [34mphilo is sleeping 
+[1;37mtime  681 philo  46 [1m[32mphilo has taken L_fork
+ 
+[1;37m
